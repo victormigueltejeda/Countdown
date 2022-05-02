@@ -1,0 +1,155 @@
+:root {
+  --white: #fffffe;
+  --black: #333333;
+  --mobile-countdown-number: 700 40px/47px var(--font-base);
+  --mobile-countdown-unit: 300 12px/14px var(--font-base);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-family: "Roboto Condensed", sans-serif;
+  font-size: 62.5%;
+  color: var(--white);
+}
+
+body {
+  width: 100%;
+  height: 100vh;
+  background: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.8) 0%,
+      rgba(0, 0, 0, 0.8) 100%
+    ),
+    url("../images/bg.jpeg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.container {
+  display: grid;
+  height: 100%;
+  width: 100%;
+  place-items: center;
+}
+
+.countdown {
+  display: flex;
+  gap: 24px;
+}
+
+.timer-counter {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  width: min-content;
+}
+
+.timer {
+  padding: 32px 16px;
+  font-size: 128px;
+  font-weight: bold;
+  border-radius: 0.5rem;
+  background-color: var(--black);
+}
+
+.text {
+  width: 100%;
+  text-align: center;
+  font-size: 40px;
+}
+
+.modal {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  padding: 30px;
+  background-color: #1a1a1a;
+  transform: translate(-50%, -50%);
+  animation: showModal 0.5s ease-in-out;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.8) 0%,
+    rgba(0, 0, 0, 0.8) 100%
+  );
+}
+.modal.hide {
+  animation: hideModal 0.5s ease-in-out forwards;
+}
+
+@keyframes showModal {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.8);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+@keyframes hideModal {
+  0% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.8);
+  }
+}
+
+.modal h3 {
+  font-size: 32px;
+}
+
+.button {
+  font-size: 16px;
+  font-weight: bold;
+  background: #003300;
+  color: var(--white);
+  border: none;
+  border-radius: 3px;
+  padding: 10px;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 425px) {
+  .countdown {
+    gap: 8px;
+  }
+
+  .timer {
+    font-size: 40px;
+  }
+
+  .text {
+    font-size: 25px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .countdown {
+    gap: 15px;
+  }
+
+  .timer {
+    font-size: 40px;
+  }
+
+  .text {
+    font-size: 25px;
+  }
+}

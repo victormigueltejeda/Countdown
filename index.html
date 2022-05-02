@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles/styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;700&display=swap"
+      rel="stylesheet"
+    />
+    <title>Countdowns</title>
+  </head>
+  <body>
+    <section class="container">
+      <div class="countdown">
+        <div class="timer-counter">
+          <span class="timer" id="dias">00</span>
+          <p class="text">dias</p>
+        </div>
+        <div class="timer-counter">
+          <span class="timer" id="hour">00</span>
+          <p class="text">horas</p>
+        </div>
+        <div class="timer-counter">
+          <span class="timer" id="minuter">00</span>
+          <p class="text">minutos</p>
+        </div>
+        <div class="timer-counter">
+          <span class="timer" id="second">00</span>
+          <p class="text">segundos</p>
+        </div>
+      </div>
+    </section>
+    <form id="modal-id" class="modal">
+      <h3 class="modal__title">Seleccione la fecha y hora</h3>
+      <input class="date-box" type="datetime-local" required id="date" />
+      <button class="button" id="btn">Cargar Fecha</button>
+    </form>
+    <script src="./js/index.js"></script>
+  </body>
+</html>
